@@ -1,0 +1,7 @@
+langchain
+streamlit==1.18.1
+faiss-cpu
+streamlit-extras
+openai
+pinecone-client
+tiktoken
