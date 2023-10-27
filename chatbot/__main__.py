@@ -12,17 +12,20 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def run_llm(query: str):
-
+    
+    # Connecting to Pinecone
     pinecone.init(api_key=os.environ.get("PINECONE_SECRET_KEY"), environment=os.environ.get("PINECONE_ENVIRONMENT_REGION"))
  
     embeddings = OpenAIEmbeddings()
-
+    
+    # Connecting to Pinecone index
     doc_search = Pinecone.from_existing_index(
 
         index_name="greta",
         embedding=embeddings
     )
-
+    
+    # Connecting chat model API key and giving settings for LLM 
     chat_model = ChatOpenAI(
 
         openai_api_key=os.environ.get("OPENAI_API_KEY"),
@@ -41,7 +44,7 @@ def run_llm(query: str):
 
     chat_history = []
 
-
+    # Message for user
     print("\nHi there! I'm Greta, your climate change assistant :) \n\nI'm here to answer your questions. \nWhen you had enough of me, just type 'bye' and I will be gone. \n\nWhat would you like to know?\n")
 
     while True:
