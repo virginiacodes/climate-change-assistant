@@ -1,6 +1,6 @@
 # climate-change-assistant
 
-Greta is a chatbot built using Python and is a command line application.
+"Greta" is a chatbot built using Python and is a command line application.
 
 PDF files including information about climate change legislations and net zero targets have been loaded onto Pinecone.
 
